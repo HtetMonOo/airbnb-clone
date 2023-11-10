@@ -1,5 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Main from './components/Main';
+
 function App() {
-  return <div className='App'>Airbnb</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' exact element={<Main />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
