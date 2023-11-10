@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .btn-container {
     border: 1px solid #c5c6d0 !important;
     border-radius: 30px !important;
@@ -26,5 +30,10 @@ code {
 
 .material-icons {
   font-size: 20px !important;
-  color: rgba(0, 0, 0, 0.54) !important;
+  color: #0000008a !important;
+}
+
+.MuiButtonBase-root {
+  text-transform: none !important;
+  color: #0000008a !important;
 }

@@ -19,10 +19,8 @@ const Navbar = () => {
             <Button
                 
                 sx={{
-                    color: '#0000008a',
                     py: '7px',
                     borderRadius: '30px',
-                    textTransform: 'none',
                     '&:hover': {
                         backgroundColor: 'rgb(247, 247, 247)'
                     }
