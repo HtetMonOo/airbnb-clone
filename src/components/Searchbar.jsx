@@ -16,7 +16,7 @@ const Searchbar = () => {
             onChange={(e)=>setSearchTerm(e.target.value)}
             style={{ border: 'none', outline: 'none', width: '200px'}}
         />
-        <IconButton sx={{ backgroundColor: '#ff5a5f', 
+        <IconButton sx={{ backgroundColor: '#ff5a5f', fontSize: '20px',
             '&:hover': {
                 backgroundColor: '#ff5a5f'
             }}} >
