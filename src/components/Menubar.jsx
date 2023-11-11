@@ -1,4 +1,4 @@
-import { Stack, Button, Icon, Box } from "@mui/material"
+import { Stack, Button, Icon } from "@mui/material"
 
 import Categories from './Categories'
 
