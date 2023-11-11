@@ -5,7 +5,7 @@ const BASE_URL = 'https://airbnb13.p.rapidapi.com';
 const options = {
   params: {
     checkin: '2023-11-16',
-    checkout: '2023-11-23',
+    checkout: '2023-11-17',
     adults: '1',
   },
   headers: {
