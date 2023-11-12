@@ -1,7 +1,14 @@
 import { Stack, Button, Typography } from "@mui/material"
-import { categories } from "../utils/constant"
+import { useEffect, useState } from "react"
+import { fetchCategories } from "../utils/fetchFromAPI"
 
 const Categories = () => {
+  const [ categories, setCategories ] = useState(null);
+
+  useEffect(() => {
+    fetchCategories().then((data) => setCategories(data))
+  }, [])
+  
   return (
     <Stack direction='row'
       sx={{
@@ -10,7 +17,7 @@ const Categories = () => {
       gap: 4,
       mr: 4
     }}>
-      {categories.map((category) => (
+      {categories?.length && categories.map((category) => (
         <Button sx={{ 
           borderBottom: '1px solid white',
           minWidth: 'auto',
@@ -23,8 +30,8 @@ const Categories = () => {
           }}}>
         <Stack direction='column' alignItems='center' gap={1}
           sx={{ whiteSpace: 'nowrap'}}>
-          {category.icon}
-          <Typography variant='caption'>{category.name}</Typography>
+          <img src={category.image} alt='icon' width='25px' />
+          <Typography variant='caption'>{category.title}</Typography>
         </Stack>
         </Button>
       ))}
