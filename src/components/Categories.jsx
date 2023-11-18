@@ -1,13 +1,6 @@
 import { Stack, Button, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
-import { fetchCategories } from "../utils/fetchFromAPI"
 
-const Categories = () => {
-  const [ categories, setCategories ] = useState(null);
-
-  useEffect(() => {
-    fetchCategories().then((data) => setCategories(data))
-  }, [])
+const Categories = ({ categories, selectedCategory, setSelectedCategory }) => {
   
   return (
     <Stack direction='row'
@@ -18,19 +11,22 @@ const Categories = () => {
       mr: 4
     }}>
       {categories?.length && categories.map((category) => (
-        <Button sx={{ 
-          borderBottom: '1px solid white',
-          minWidth: 'auto',
-          p: '6px 0',
-          '&:hover': { 
-            borderRadius: '0',
-            backgroundColor: 'white',
-            borderColor: '#c5c6d0',
-            color: 'black !important'
+        <Button 
+          onClick={() => setSelectedCategory(category.title)}
+          sx={{ 
+            borderBottom: category.title === selectedCategory ? '1px solid black !important' : '1px solid white !important',
+            color: category.title === selectedCategory ? 'black !important' : '#0000008a !important',
+            minWidth: 'auto',
+            p: '6px 0',
+            '&:hover': { 
+              borderRadius: '0',
+              backgroundColor: 'white',
+              borderColor: '#c5c6d0',
+              color: 'black !important'
           }}}>
         <Stack direction='column' alignItems='center' gap={1}
           sx={{ whiteSpace: 'nowrap'}}>
-          <img src={category.image} alt='icon' width='25px' />
+          <img src={category.imageUrl} alt='icon' width='25px' />
           <Typography variant='caption'>{category.title}</Typography>
         </Stack>
         </Button>

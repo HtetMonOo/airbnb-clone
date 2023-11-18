@@ -4,8 +4,8 @@ const BASE_URL = 'https://airbnb13.p.rapidapi.com';
 
 const options = {
   params: {
-    checkin: '2023-11-16',
-    checkout: '2023-11-17',
+    checkin: '2023-12-16',
+    checkout: '2023-12-17',
     adults: '1',
   },
   headers: {
@@ -16,20 +16,23 @@ const options = {
 
 export const fetchFromAPI = async (url) => {
   const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+  console.log(data);
   return data;
 };
 
 const option = {
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-    'X-RapidAPI-Host': 'airbnb19.p.rapidapi.com',
+    'X-RapidAPI-Host': 'airbnb-data.p.rapidapi.com',
   },
 };
 
-export const fetchCategories = async () => {
-  const { data } = await axios.get(
-    'https://airbnb19.p.rapidapi.com/api/v1/getCategory',
-    option
-  );
-  return data.data;
-};
+// export const fetchCategories = async () => {
+//   const { data } = await axios.get(
+//     'https://airbnb-data.p.rapidapi.com/WebAPIs/airbnb/category/v1',
+//     option
+//   );
+//   return data.data;
+// };
+
+export const fetchCategories = () => console.log('in fetching categories');

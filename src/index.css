@@ -34,7 +34,6 @@ code {
 
 .MuiButtonBase-root {
   text-transform: none !important;
-  color: #0000008a !important;
 }
 
 .square-btn {
@@ -44,8 +43,66 @@ code {
   white-space: nowrap;
   width: max-content;
   height: max-content;
+  color: #0000008a !important;
 }
 
 .square-btn:hover {
   background-color: inherit !important;
+}
+
+.img-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 10px; 
+  cursor: pointer;
+  position: relative;
+  transition: flex 0.3s ease-out;
+}
+
+.arrow-btn-container {
+  display: none;
+}
+
+.img-container:hover .arrow-btn-container {
+  position: absolute; 
+  top: 50%; 
+  z-index: 1; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .36s ease-in-out;
+}
+
+.arrow-btn {
+  display: block;
+  background-color: #ffffff !important;
+  box-shadow: 0px 0px 25px 3px rgb(196, 196, 196);
+  opacity: 0.7;
+  transition: all .36s ease-in-out;
+  border-radius: 50%;
+  color: #0000008a !important;
+}
+
+.left {
+  padding: 4px 1px 2px 8px;
+  margin-left: 10px;
+}
+
+.right {
+  padding: 4px 3px 2px 6px;
+  margin-right: 10px;
+}
+
+.arrow-btn:hover {
+  opacity: 1;
 }
